@@ -1,0 +1,101 @@
+[
+  {
+    "sku": "MB-TEE-CLASSIC-WHT",
+    "slug": "money-brand-classic-tee-white",
+    "name": "Money Brand Classic Tee – White",
+    "category": "Tee",
+    "price": 175,
+    "color": "White",
+    "image": "/img/tee-classic-white.png",
+    "status": "available",
+    "description": "Premium heavyweight cotton tee with the original Money Brand wordmark in black. Clean, gallery-ready, and built to outlast every trend."
+  },
+  {
+    "sku": "MB-TEE-COIN-BLK",
+    "slug": "money-brand-coin-logo-tee-black",
+    "name": "Money Brand Coin Logo Tee – Black",
+    "category": "Tee",
+    "price": 195,
+    "color": "Black / Gold",
+    "image": "/img/tee-coin-black.png",
+    "status": "available",
+    "description": "Signature black tee with the Money Brand coin logo in metallic gold. Street luxury positioned above Psycho Bunny, below Celine."
+  },
+  {
+    "sku": "MB-HD-GOLD-LUXE",
+    "slug": "luxe-metallic-gold-hoodie",
+    "name": "Luxe Metallic Gold Hoodie",
+    "category": "Hoodie",
+    "price": 525,
+    "color": "Metallic Gold",
+    "image": "/img/hoodie-gold.png",
+    "status": "available",
+    "description": "Full metallic gold Money Brand hoodie with tonal embroidery. Smooth interior, heavyweight body, red-carpet outer shell."
+  },
+  {
+    "sku": "MB-HD-SILVER-LUXE",
+    "slug": "luxe-metallic-silver-hoodie",
+    "name": "Luxe Metallic Silver Hoodie",
+    "category": "Hoodie",
+    "price": 495,
+    "color": "Metallic Silver",
+    "image": "/img/hoodie-silver.png",
+    "status": "available",
+    "description": "Metallic silver hoodie with discreet Money Brand branding. Clean, future-facing, made for night shoots and flash photography."
+  },
+  {
+    "sku": "MB-HD-BENJI-CREW",
+    "slug": "currency-crew-benjamin-franklin",
+    "name": "Currency Crew – Benjamin Franklin",
+    "category": "Sweatshirt",
+    "price": 545,
+    "color": "Currency Print",
+    "image": "/img/crew-franklin.png",
+    "status": "available",
+    "description": "All-over Benjamin Franklin currency crewneck. Tastefully toned-down palette with museum-level print clarity."
+  },
+  {
+    "sku": "MB-BELT-SIG-BLK-GOLD",
+    "slug": "signature-leather-belt-black-gold",
+    "name": "Signature Leather Belt – Black + Gold",
+    "category": "Belt",
+    "price": 285,
+    "color": "Black / Gold",
+    "image": "/img/belt-black-gold.png",
+    "status": "available",
+    "description": "Black Italian leather belt with the Money Brand coin buckle in brushed gold. The quiet flex that holds the whole fit together."
+  },
+  {
+    "sku": "MB-BELT-CURRENCY-BROWN",
+    "slug": "currency-strap-belt-brown",
+    "name": "Currency Strap Belt – Brown",
+    "category": "Belt",
+    "price": 325,
+    "color": "Brown / Currency",
+    "image": "/img/belt-currency-brown.png",
+    "status": "available",
+    "description": "Brown leather belt with currency strip inlay. Understated from a distance, wild up close."
+  },
+  {
+    "sku": "MB-CAP-CLASSIC-BLK",
+    "slug": "money-brand-classic-cap-black",
+    "name": "Money Brand Classic Cap – Black",
+    "category": "Cap",
+    "price": 145,
+    "color": "Black / Gold",
+    "image": "/img/cap-classic-black.png",
+    "status": "available",
+    "description": "Classic black cap with Money Brand wordmark in gold. Everyday uniform piece for the brand faithful."
+  },
+  {
+    "sku": "MB-CAP-LUXE-GOLD",
+    "slug": "money-brand-metallic-gold-cap",
+    "name": "Money Brand Metallic Gold Cap",
+    "category": "Cap",
+    "price": 175,
+    "color": "Metallic Gold",
+    "image": "/img/cap-gold.png",
+    "status": "available",
+    "description": "Metallic gold cap with tonal embroidery. Designed to sit in the same conversation as Celine and LV caps, priced strategically below."
+  }
+]
