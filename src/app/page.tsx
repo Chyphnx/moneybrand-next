@@ -1,65 +1,92 @@
 import Image from "next/image";
+import { featuredProducts } from "@/lib/products";
+import { ProductGrid } from "@/components/ProductGrid";
 
-export default function Home() {
+export default function HomePage() {
+  const featured = featuredProducts();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <>
+      <section className="border-b border-neutral-900 bg-gradient-to-b from-black via-neutral-950 to-black">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 md:flex-row md:items-center">
+          <div className="flex-1">
+            <p className="text-[10px] uppercase tracking-[0.26em] text-neutral-400">
+              Money Brand Collection 01
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-wide md:text-5xl">
+              NEW ARRIVALS
+            </h1>
+            <p className="mt-4 max-w-xl text-sm text-neutral-200 md:text-base">
+              Metallic hoodies, currency crews, and precision-cut tees—priced
+              strategically above Psycho Bunny and below Celine. Built for
+              people who actually move capital.
+            </p>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="/catalog"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-amber-300 px-8 py-2 text-sm font-semibold text-black hover:bg-amber-200"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+              Shop the collection
+            </a>
+          </div>
+          <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-3xl bg-neutral-900 md:mt-0 md:w-[48%]">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/img/hero-moneybrand.png"
+              alt="Money Brand metallic hoodies and currency print crewnecks"
+              fill
+              priority
+              className="object-cover object-center"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <ProductGrid products={featured} />
+
+      <section
+        id="contact"
+        className="border-t border-neutral-900 bg-black py-12 text-xs text-neutral-300"
+      >
+        <div className="mx-auto max-w-6xl px-4 grid gap-8 md:grid-cols-[1.1fr,1fr]">
+          <div>
+            <h2 className="text-sm font-semibold tracking-[0.22em] uppercase">
+              Wholesale / Retail Placement
+            </h2>
+            <p className="mt-3 max-w-md text-neutral-400">
+              For Saks, Neiman-level buyers and boutiques that sit between street
+              and luxury. Submit intent here and we&apos;ll respond with line
+              sheets, margin structure, and delivery windows.
+            </p>
+          </div>
+          <form
+            className="flex flex-col gap-3"
+            action="/api/contact"
+            method="POST"
+          >
+            <input
+              name="name"
+              placeholder="Name"
+              className="rounded border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs outline-none focus:border-amber-300"
+            />
+            <input
+              name="email"
+              placeholder="Email"
+              className="rounded border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs outline-none focus:border-amber-300"
+            />
+            <textarea
+              name="message"
+              placeholder="Regions, quantities, target client, anything important..."
+              rows={3}
+              className="rounded border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs outline-none focus:border-amber-300"
+            />
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-2 text-xs font-semibold text-black hover:bg-amber-200"
+            >
+              Request line sheet / placement
+            </button>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }
