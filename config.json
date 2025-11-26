@@ -1,0 +1,6 @@
+{
+  "storeDomain": "YOUR-STORE-NAME.myshopify.com",
+  "adminToken": "shpat_YOUR_ADMIN_API_TOKEN",
+  "apiVersion": "2025-01",
+  "csvPath": "moneybrand_shopify_products_sizes.csv"
+}

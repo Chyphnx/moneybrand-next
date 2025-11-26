@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
+    "cf:build": "npx @cloudflare/next-on-pages@latest build --skip-deploy --experimental-minify",
     "validate:assets": "node scripts/validate-assets.mjs",
     "validate:all": "npm run lint && npm run build && npm run validate:assets"
   },
@@ -37,7 +38,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Chyphnx/moneybrand-next/issues"
   },

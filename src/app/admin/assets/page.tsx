@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { products } from "@/lib/products";
+import { allProducts } from "@/lib/products";
 
 export const dynamic = "force-static";
 
@@ -14,7 +14,7 @@ type AssetRow = {
 export default function AssetsAdminPage() {
   const publicDir = path.join(process.cwd(), "public");
 
-  const rows: AssetRow[] = products.map((p) => {
+  const rows: AssetRow[] = allProducts().map((p) => {
     const imagePath = p.image.startsWith("/") ? p.image : `/${p.image}`;
     const onDisk = path.join(publicDir, imagePath);
     const exists = fs.existsSync(onDisk);

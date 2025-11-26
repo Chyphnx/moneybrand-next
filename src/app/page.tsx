@@ -1,92 +1,218 @@
-import Image from "next/image";
-import { featuredProducts } from "@/lib/products";
-import { ProductGrid } from "@/components/ProductGrid";
+import Link from "next/link";
 
-export default function HomePage() {
-  const featured = featuredProducts();
-
+export default function Home() {
   return (
-    <>
-      <section className="border-b border-neutral-900 bg-gradient-to-b from-black via-neutral-950 to-black">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 md:flex-row md:items-center">
-          <div className="flex-1">
-            <p className="text-[10px] uppercase tracking-[0.26em] text-neutral-400">
-              Money Brand Collection 01
+    <main className="min-h-screen bg-[#050509] text-[#F5F3EE]">
+      {/* HERO */}
+      <section className="border-b border-[#262632] bg-gradient-to-b from-black to-[#050509]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid gap-10 
+lg:grid-cols-2 items-center">
+          <div className="space-y-6">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-[#9C9CA5]">
+              Drop 001 · Made in the USA
             </p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-wide md:text-5xl">
-              NEW ARRIVALS
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+              MoneyBrand® Signature Hoodie.
             </h1>
-            <p className="mt-4 max-w-xl text-sm text-neutral-200 md:text-base">
-              Metallic hoodies, currency crews, and precision-cut tees—priced
-              strategically above Psycho Bunny and below Celine. Built for
-              people who actually move capital.
+            <p className="text-sm text-[#9C9CA5] leading-relaxed max-w-xl">
+              American–made street-lux. Metallic gold foil logo, contrast
+              stitching, hidden GhostPocket stash pocket, and tracker-ready
+              sleeve. Built to feel like wealth, not merch.
             </p>
-            <a
-              href="/catalog"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-amber-300 px-8 py-2 text-sm font-semibold text-black hover:bg-amber-200"
-            >
-              Shop the collection
-            </a>
+
+            <div className="flex items-baseline gap-3">
+              <span className="text-2xl font-semibold">$198</span>
+              <span className="text-sm text-[#9C9CA5] line-through">$320 MSRP</span>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href={
+                  process.env.NEXT_PUBLIC_SIGNATURE_URL ||
+                  "https://YOUR-STORE-NAME.myshopify.com/products/signature-ghostpocket-hoodie"
+                }
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-full 
+bg-[#D4AF37] text-black text-[10px] uppercase tracking-[0.25em] hover:bg-[#F3D68B] 
+transition-colors"
+              >
+                Buy Signature Hoodie
+              </Link>
+
+              <Link
+                href="#drop"
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-full border 
+border-[#262632] text-[10px] uppercase tracking-[0.25em] text-[#9C9CA5] hover:border-[#D4AF37] 
+hover:text-[#D4AF37] transition-colors"
+              >
+                View Drop 001
+              </Link>
+            </div>
+
+            <p className="text-[11px] text-[#9C9CA5] max-w-sm">
+              Every <span className="text-[#D4AF37]">$100</span> spent sends{" "}
+              <span className="text-[#D4AF37]">$20</span> to feed people, support kids,
+              and help the unhoused through the holidays. One tee donated per order.
+            </p>
           </div>
-          <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-3xl bg-neutral-900 md:mt-0 md:w-[48%]">
-            <Image
-              src="/img/hero-moneybrand.png"
-              alt="Money Brand metallic hoodies and currency print crewnecks"
-              fill
-              priority
-              className="object-cover object-center"
-            />
+
+          <div className="relative">
+            <div className="absolute inset-0 blur-3xl bg-[#D4AF37]/10 rounded-full" />
+            <div className="relative rounded-3xl overflow-hidden bg-[#15151B] border 
+border-[#262632] shadow-[0_24px_60px_rgba(0,0,0,0.75)]">
+              <div className="w-full h-[420px] flex items-center justify-center text-[#9C9CA5] 
+text-xs text-center px-6">
+                Replace this block with your hero mockup image
+                (e.g. /img/hero-moneybrand.png) via &lt;Image /&gt;.
+              </div>
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between 
+text-[10px] uppercase tracking-[0.25em]">
+                <span className="bg-black/70 rounded-full px-3 py-1">
+                  GhostPocket · Hidden Stash
+                </span>
+                <span className="bg-black/70 rounded-full px-3 py-1">
+                  Tracker-Ready Sleeve
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <ProductGrid products={featured} />
-
+      {/* DROP 001 */}
       <section
-        id="contact"
-        className="border-t border-neutral-900 bg-black py-12 text-xs text-neutral-300"
+        id="drop"
+        className="border-b border-[#262632] bg-[#050509] py-10"
       >
-        <div className="mx-auto max-w-6xl px-4 grid gap-8 md:grid-cols-[1.1fr,1fr]">
-          <div>
-            <h2 className="text-sm font-semibold tracking-[0.22em] uppercase">
-              Wholesale / Retail Placement
-            </h2>
-            <p className="mt-3 max-w-md text-neutral-400">
-              For Saks, Neiman-level buyers and boutiques that sit between street
-              and luxury. Submit intent here and we&apos;ll respond with line
-              sheets, margin structure, and delivery windows.
-            </p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+          <h2 className="text-xl sm:text-2xl font-semibold">
+            Drop 001 · MoneyBrand Uniform
+          </h2>
+          <p className="text-sm text-[#9C9CA5] max-w-xl">
+            Tight, high-signal capsule: Signature hoodie, Currency Crew,
+            Wordmark tees, and classic caps. All-black and gold, all American-made.
+            No filler SKUs.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-4 text-sm">
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/60 p-4 flex flex-col 
+gap-2">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                MB-001
+              </span>
+              <span className="font-medium">Signature GhostPocket Hoodie</span>
+              <span className="text-xs text-[#9C9CA5]">Black · Gold Foil</span>
+              <span className="text-sm mt-2">$198</span>
+            </div>
+
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/60 p-4 flex flex-col 
+gap-2">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                MB-002
+              </span>
+              <span className="font-medium">Currency Crew Sweatshirt</span>
+              <span className="text-xs text-[#9C9CA5]">
+                Black · Raised Wordmark
+              </span>
+              <span className="text-sm mt-2">$148</span>
+            </div>
+
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/60 p-4 flex flex-col 
+gap-2">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                MB-003
+              </span>
+              <span className="font-medium">Wordmark Tee · Dual Foil</span>
+              <span className="text-xs text-[#9C9CA5]">
+                Black or White · Gold / Silver
+              </span>
+              <span className="text-sm mt-2">$78</span>
+            </div>
+
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/60 p-4 flex flex-col 
+gap-2">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                MB-004
+              </span>
+              <span className="font-medium">Classic Cap · Raised Logo</span>
+              <span className="text-xs text-[#9C9CA5]">
+                Black · Gold or Silver Hit
+              </span>
+              <span className="text-sm mt-2">$68</span>
+            </div>
           </div>
-          <form
-            className="flex flex-col gap-3"
-            action="/api/contact"
-            method="POST"
-          >
-            <input
-              name="name"
-              placeholder="Name"
-              className="rounded border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs outline-none focus:border-amber-300"
-            />
-            <input
-              name="email"
-              placeholder="Email"
-              className="rounded border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs outline-none focus:border-amber-300"
-            />
-            <textarea
-              name="message"
-              placeholder="Regions, quantities, target client, anything important..."
-              rows={3}
-              className="rounded border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs outline-none focus:border-amber-300"
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center rounded-full bg-amber-300 px-6 py-2 text-xs font-semibold text-black hover:bg-amber-200"
-            >
-              Request line sheet / placement
-            </button>
-          </form>
         </div>
       </section>
-    </>
+
+      {/* HOLIDAY LEDGER */}
+      <section
+        id="ledger"
+        className="border-b border-[#262632] bg-black py-10"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <h2 className="text-xl sm:text-2xl font-semibold">
+            Holiday Ledger · Giveback Built-In
+          </h2>
+          <p className="text-sm text-[#9C9CA5] max-w-2xl">
+            From Thanksgiving through New Year’s, MoneyBrand runs on a simple
+            ledger rule: for every $100 in product, $20 is allocated to food,
+            kids, and unhoused support — plus one tee donated per order.
+          </p>
+
+          <div className="grid gap-4 md:grid-cols-3 text-sm">
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/70 p-4 space-y-2">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                1 · Food Security
+              </p>
+              <p className="text-sm">
+                Local meals, pantry support, and direct grocery hits in Tampa
+                and surrounding areas.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/70 p-4 space-y-2">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                2 · Kids & Gifts
+              </p>
+              <p className="text-sm">
+                Toys, essentials, and winter basics for kids who don’t get a
+                “holiday reset” by default.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-[#262632] bg-[#15151B]/70 p-4 space-y-2">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-[#9C9CA5]">
+                3 · Unhoused Support
+              </p>
+              <p className="text-sm">
+                Hoodies, tees, and targeted micro-grants for people on the
+                street — no marketing spin, just impact.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-[11px] text-[#9C9CA5]">
+            Full ledger summaries will be published after the holiday run, with
+            transparent breakdowns of units sold, dollars allocated, and
+            organizations supported.
+          </p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-[#262632] bg-black">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row gap-3 
+items-center justify-between text-[11px] text-[#9C9CA5]">
+          <span>© {new Date().getFullYear()} MoneyBrand. All rights reserved.</span>
+          <div className="flex items-center gap-4">
+            <Link href="#drop">Drop 001</Link>
+            <Link href="#ledger">Holiday Ledger</Link>
+            <Link href="mailto:support@moneybrandclothing.com">
+              Support
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
+
